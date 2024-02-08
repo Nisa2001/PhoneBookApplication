@@ -1,37 +1,40 @@
-﻿@model PhoneBookApplication.Models.Contact
+﻿@model PhoneBookApplication.Models.Contact ///Sayfanın kullanacağı modeli belirtir. Contact sınıfının bir örneğini kullanır.
 
 @{
-    Layout = "_Layout";
+    Layout = "_Layout"; /*Arayüz için kullandığımız layoutu yani şablonu belirtir.*/
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
+    <meta name="viewport" content="width=device-width" /> @*mobil cihaz alan uyumu*@
+    <title>Düzenle</title>
 </head>
 <body>
 
-<h4>Contact</h4>
+<h4>Kişi</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ContactId" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div> @*doğrulama işlemi*@
+                <input type="hidden" asp-for="ContactId" /> @*gizlenmiş kişi id’si*@
+               
+                @* kişi bilgisi düzenlemek için bir form*@
+                <div class="form-group">
+                   
+                @*<label asp-for="Name" class="control-label"></label>*@Ad
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Surname" class="control-label"></label>
+               @* <label asp-for="Surname" class="control-label"></label>*@Soyad
                 <input asp-for="Surname" class="form-control" />
                 <span asp-validation-for="Surname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
+                @*<label asp-for="PhoneNumber" class="control-label"></label>*@Telefon Numarası
                 <input asp-for="PhoneNumber" class="form-control" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
@@ -41,23 +44,34 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Titles" class="control-label"></label>
+               @* <label asp-for="Titles" class="control-label"></label>*@Ünvan
                 <input asp-for="Titles" class="form-control" />
                 <span asp-validation-for="Titles" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success" />
+               @* <label asp-for="Department" class="control-label"></label>*@Departman
+                    <input asp-for="Department" class="form-control" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+
+            </div>
+                <div class="form-group">
+                    @*kaydet butonu için input*@
+                <input type="submit" value="Kaydet" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+    <div>
+         @*kişi listesine geri dön, buton gibi olan bir bağlantıdır*@
+    <a class="btn btn-secondary" asp-action="Index">Kişi Listesine Geri Dön</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} 
 }
-</body>
+@* Sayfanın sonundaki script'leri içeren _ValidationScriptsPartial partial view'inin eklenmesidir. 
+    Bu script'ler genellikle form doğrulama (validation) işlemleri için gerekli olan 
+    JavaScript kütüphanelerini ve kodlarını içerir.
+*@</body>
 </html>

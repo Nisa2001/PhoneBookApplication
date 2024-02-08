@@ -11,7 +11,7 @@ namespace PhoneBookApplication.Data
 
         }
         public DbSet<Contact>Contacts  { get; set; }
-        public DbSet<Department> Departments { get; set; }
+      
     
 
     }

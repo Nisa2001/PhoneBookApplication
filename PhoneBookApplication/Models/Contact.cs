@@ -13,12 +13,12 @@ namespace PhoneBookApplication.Models
         public int ContactId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string PhoneNumber { get; set; } 
+        public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        
-        public Department Departments { get; set; }
-      
-        public string Titles{ get; set; }
+
+        public string Department { get; set; }
+
+        public string Titles { get; set; }
 
     }
 }

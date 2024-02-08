@@ -9,28 +9,28 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>Kişi Oluştur</title>
 </head>
 <body>
 
-<h4>Contact</h4>
+<h4>Yeni Kişi</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                @*<label asp-for="Name" class="control-label"></label>*@Ad
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Surname" class="control-label"></label>
+                @*<label asp-for="Surname" class="control-label"></label>*@Soyad
                 <input asp-for="Surname" class="form-control" />
                 <span asp-validation-for="Surname" class="text-danger"></span>
             </div>
                 <div class="form-group">
-                    <label asp-for="PhoneNumber" class="control-label"></label>
+                   @* <label asp-for="PhoneNumber" class="control-label"></label>*@Telefon Numarası
                     <input asp-for="PhoneNumber" class="form-control" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
@@ -40,20 +40,25 @@
                     <span asp-validation-for="Email" class="text-danger"></span>
             </div>
                 <div class="form-group">
-                    <label asp-for="Titles" class="control-label"></label>
+                    @*<label asp-for="Titles" class="control-label"></label>*@Ünvan
                     <input asp-for="Titles" class="form-control" />
                     <span asp-validation-for="Titles" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    @*<label asp-for="Department" class="control-label"></label>*@Departman
+                    <input asp-for="Department" class="form-control" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
 
             <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-success" />
+                    <input type="submit" value="Kaydet" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Kişi Listesine Geri Dön</a>
 </div>
 
 @section Scripts {
